@@ -24,7 +24,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'state' => 'stable',
 	'uploadfolder' => 1,
 	'createDirs' => '',
-	'modify_tables' => 'pages,tx_news_domain_model_news',
+	'modify_tables' => 'pages,tx_news_domain_model_news,tt_news',
 	'clearcacheonload' => 1,
 	'lockType' => '',
 	'author' => 'Frank Kroeber, Simon Schmidt',
@@ -34,13 +34,14 @@ $EM_CONF[$_EXTKEY] = array(
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
-			'php' => '5.3.0-5.3.99',
+			'php' => '5.3.0-5.5.99',
 			'typo3' => '4.5.1-4.5.99',
 		),
 		'conflicts' => array(
 		),
 		'suggests' => array(
 			'news' => '2.1.0-2.9.99',
+			'tt_news' => '3.3.0-3.9.99',
 		),
 	),
 	'_md5_values_when_last_written' => 'a:9:{s:12:"ext_icon.gif";s:4:"3527";s:14:"ext_tables.php";s:4:"257b";s:14:"ext_tables.sql";s:4:"b1f9";s:41:"Configuration/TCA/tx_mfcauthor_author.php";s:4:"4d85";s:38:"Configuration/TypoScript/constants.txt";s:4:"c803";s:34:"Configuration/TypoScript/setup.txt";s:4:"da2a";s:44:"Resources/Private/Language/locallang_tca.xml";s:4:"c76f";s:34:"Resources/Public/Icon/fe_users.gif";s:4:"d178";s:43:"Resources/Public/Stylesheets/mfc_author.css";s:4:"f55c";}',

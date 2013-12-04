@@ -1,0 +1,12 @@
+.. |img-3|      image:: ../Images/add_author.png
+.. :align: LEFT
+.. :border: 0
+.. :name: Grafik1
+.. :width: 100%
+
+
+.. |img-4|      image:: ../Images/select_author.png
+.. :align: LEFT
+.. :border: 0
+.. :name: Select author
+.. :width: 100%

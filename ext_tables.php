@@ -65,4 +65,7 @@ t3lib_div::loadTCA("tx_news_domain_model_news");
 t3lib_extMgm::addTCAcolumns("tx_news_domain_model_news",$tempColumns,1);
 t3lib_extMgm::addFieldsToPalette('tx_news_domain_model_news', 'paletteAuthor', '--linebreak--, tx_mfcauthor_author', '', 'after:author_email');
 
+t3lib_div::loadTCA("tt_news");
+t3lib_extMgm::addTCAcolumns("tt_news",$tempColumns,1);
+t3lib_extMgm::addFieldsToPalette('tt_news', '3', '--linebreak--, tx_mfcauthor_author', '', 'after:author_email');
 ?>

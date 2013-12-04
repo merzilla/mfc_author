@@ -12,6 +12,14 @@ CREATE TABLE tx_news_domain_model_news (
 	tx_mfcauthor_author  int(4) unsigned NOT NULL DEFAULT '0'
 );
 
+
+#
+# Table structure for table 'tt_news'
+#
+CREATE TABLE tt_news (
+	tx_mfcauthor_author  int(4) unsigned NOT NULL DEFAULT '0'
+);
+
 #
 # Table structure for table 'tx_mfcauthor_author'
 #
