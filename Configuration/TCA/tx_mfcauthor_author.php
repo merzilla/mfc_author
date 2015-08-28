@@ -97,4 +97,6 @@ $GLOBALS['TCA']['tx_mfcauthor_author'] = array(
     )
 );
 
+$GLOBALS['TCA']['tx_mfcauthor_author']['ctrl']['searchFields'] = 'uid,firstname,name,description,email,profil_link,xing,facebook,twitter';
+
 ?>
