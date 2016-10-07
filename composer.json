@@ -1,0 +1,26 @@
+{
+  "name": "merzilla/mfc-author",
+  "type": "typo3-cms-extension",
+  "description": "Gives you the possibility to add author informations into every page or tx_news entry",
+  "homepage": "https://github.com/merzilla/mfc_author",
+  "version": "2.1.0",
+  "keywords": [
+    "TYPO3",
+    "CMS",
+  ],
+  "replace": {
+    "mfc-author": "self.version",
+    "typo3-ter/mfc-author": "self.version"
+  },
+  "require": {
+    "typo3/cms-core": ">=6.2.0,<=7.6.99",
+    "php": ">=5.5.0"
+  },
+  "authors": [
+    {
+      "name": "Simon Schmidt",
+      "email": "typo3@marketing-factory.de",
+      "homepage": "https://www.marketing-factory.de"
+    }
+  ]
+}
