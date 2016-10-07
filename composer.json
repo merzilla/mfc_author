@@ -3,7 +3,7 @@
   "type": "typo3-cms-extension",
   "description": "Gives you the possibility to add author informations into every page or tx_news entry",
   "homepage": "https://github.com/merzilla/mfc_author",
-  "version": "2.1.0",
+  "license": "GPL-2.0+",
   "keywords": [
     "TYPO3",
     "CMS",
@@ -22,5 +22,8 @@
       "email": "typo3@marketing-factory.de",
       "homepage": "https://www.marketing-factory.de"
     }
-  ]
+  ],
+  "extra": {
+    "installer-name": "mfc-author"
+  },
 }
