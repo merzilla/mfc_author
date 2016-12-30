@@ -1,29 +1,35 @@
 {
-  "name": "merzilla/mfc-author",
-  "type": "typo3-cms-extension",
+  "name": "laurisaarni/we_author",
   "description": "Gives you the possibility to add author informations into every page or tx_news entry",
-  "homepage": "https://github.com/merzilla/mfc_author",
-  "license": "GPL-2.0+",
-  "keywords": [
-    "TYPO3",
-    "CMS",
-  ],
-  "replace": {
-    "mfc-author": "self.version",
-    "typo3-ter/mfc-author": "self.version"
+  "version": "1.0",
+  "autoload": {
+    "psr-4": {
+      "WE\\Weauthor\\": "Classes/"
+    }
   },
   "require": {
-    "typo3/cms-core": ">=6.2.0,<=7.6.99",
-    "php": ">=5.5.0"
+    "php": ">=5.5.0",
+    "typo3/cms-core": ">7.6.0,<8.99.99||dev-master",
+    "lochmueller/focuspoint": "~2.1.0"
   },
-  "authors": [
-    {
-      "name": "Simon Schmidt",
-      "email": "typo3@marketing-factory.de",
-      "homepage": "https://www.marketing-factory.de"
-    }
+  "type": "typo3-cms-extension",
+  "keywords": [
+    "TYPO3 CMS",
+    "We Author"
   ],
-  "extra": {
-    "installer-name": "mfc-author"
+  "homepage": "https://github.com/laurisaarni/we_author",
+  "license": "GPL-2.0+",
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin"
   },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web",
+      "Package": {
+        "partOfMinimalUsableSystem": true
+      }
+    }
+  }
 }

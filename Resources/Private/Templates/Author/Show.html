@@ -1,0 +1,164 @@
+<f:layout name="Product" />
+
+<f:section name="MainContent">
+    <v:if stack="{0: track.latitude, 1: '!=', 2: 0, 3: 'AND', 4: track.longitude, 5: '!=', 6: 0}">
+        <div class="main-content__region-map">
+            <div id="region-map">
+                <v:variable.set name="gpsTracksCssFile" value="{settings.baseUrl}typo3conf/ext/userjrtsite/Resources/Public/Stylesheets/Build/gps-tracks.css" />
+                <iframe
+                        width="100%"
+                        height="100%"
+                        frameborder="0" style="border:0"
+                        src="{track.xxlMapLink}&MapMst=12&CssFile={gpsTracksCssFile}" allowfullscreen>
+                </iframe>
+                <div class="flip-nav__wrap">
+                    <a href="#" class="flip-nav__item js-map--toggle">
+                        <span class="ficon ficon__close"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </v:if>
+
+    <div class="main-content__block"
+         xmlns="http://www.w3.org/1999/xhtml" lang="en"
+         xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+         xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+         xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+         xmlns:grid="http://typo3.org/ns/JRT/Userjrtgrid/ViewHelpers">
+
+
+        <div class="content-block--fullwidth slider">
+            <div class="js-slider">
+                <f:if condition="{track.image}">
+                    <f:then>
+                        <f:for each="{track.image}" as="image">
+                            <div>
+                                <f:image src="{image.uid}" width="599c" height="369c" class="slider__img" treatIdAsReference="true"/>
+                            </div>
+                        </f:for>
+                    </f:then>
+                    <f:else>
+                        <div>
+                            <f:image src="typo3conf/ext/userjrtevent/Resources/Public/Images/NoImage.jpg" width="599c" height="369c" alt="Image not available" title="Image not available" class="slider__img" />
+                        </div>
+                    </f:else>
+                </f:if>
+            </div>
+
+            <v:if stack="{0: track.latitude, 1: '!=', 2: 0, 3: 'AND', 4: track.longitude, 5: '!=', 6: 0}">
+                <div class="flip-nav__wrap">
+                    <a href="#" class="flip-nav__item js-map--toggle">
+                        <span class="ficon ficon__pin"></span>
+                    </a>
+                </div>
+            </v:if>
+        </div>
+
+        <h1>{track.name}</h1>
+
+        <div class="main__content-leftcol">
+            <div class="content-block">
+                {track.description -> f:format.html()}
+            </div>
+
+            <f:if condition="{track.variant}">
+                <div class="content-block">
+                    <h2>{f:translate(key: 'track.variant')}</h2>
+                    <p>{track.variant -> f:format.nl2br()}</p>
+                </div>
+            </f:if>
+
+        </div>
+        <div class="main__content-rightcol">
+            <div class="content-block">
+                <h2>{f:translate(key: 'track.tourCharacteristics')}</h2>
+                 <div class="track__details">
+                    <f:if condition="{track.distance}">
+                    	<div>
+                        	<img src="/typo3conf/ext/userjrttrack/Resources/Public/Images/gps-distance.svg" alt="{f:translate(key: 'track.distance')}">
+                        	<strong>{f:translate(key: 'track.distance')}</strong>
+                            <span>{track.distance} km</span>
+                        </div>
+                    </f:if>
+                    <f:if condition="{track.difficulty}">
+                    	 <div>
+                         	<img src="/typo3conf/ext/userjrttrack/Resources/Public/Images/gps-challenge-{track.difficulty}-of-5.svg" alt="{f:translate(key: 'track.difficulty')}">
+                         	<strong>{f:translate(key: 'track.difficulty')}</strong>
+                         	<span>{track.difficulty} {f:translate(key: 'track.of')} 5</span>
+                         </div>
+                    </f:if>
+                    <f:if condition="{track.time}">
+                    	<div>
+                        	<img src="/typo3conf/ext/userjrttrack/Resources/Public/Images/gps-time-required.svg" alt="{f:translate(key: 'track.time')}">
+                            <strong>{f:translate(key: 'track.time')}</strong>
+                            <span>{track.time} {f:translate(key: 'track.timeUnit')}</span>
+                        </div>
+                    </f:if>
+                    <f:if condition="{track.highestPoint}">
+                    	<div>
+                        	<img src="/typo3conf/ext/userjrttrack/Resources/Public/Images/gps-highest-point.svg" alt="{f:translate(key: 'track.highestPoint')}">
+                            <strong>{f:translate(key: 'track.highestPoint')}</strong>
+                            <span>{track.highestPoint} m</span>
+                        </div>
+                    </f:if>
+                </div>
+            </div>
+			
+            <f:if condition="{track.startingPoint}">
+                <div class="content-block">
+                    <h2>{f:translate(key: 'track.startingPoint')}</h2>
+                    <p>{track.startingPoint}</p>
+                </div>
+            </f:if>
+            
+            <f:if condition="{track.placesAlongTheRoute">
+                <div class="content-block">
+                    <h2>{f:translate(key: 'track.placesAlongTheRoute')}</h2>
+                    <ul>
+                        <f:for each="{track.placesAlongTheRoute}" as="place">
+                            <li>
+                                {place}
+                            </li>
+                        </f:for>
+                    </ul>
+                </div>
+            </f:if>
+            
+            <f:if condition="{track.profileLink}">
+                <div class="content-block">
+                    <h2>{f:translate(key: 'track.elevationProfile')}</h2>
+                    <a href="{track.profileLink}" target="_blank"><img src="{track.profileLink}" width="100%"/></a>
+                </div>
+            </f:if>
+            
+        </div>
+    </div>
+</f:section>
+
+<f:section name="SidebarContent">
+    <f:if condition="{track.tourReportLink}{track.downloadGpxLink}{track.downloadKmlLink}">
+        <div class="content-block sidebar__content-block">
+            <h2>{f:translate(key: 'track.moreInformation')}</h2>
+            <div class="box--bg">
+                <f:if condition="{track.tourReportLink}">
+                    <a class="link--ficon fancybox-iframe" href="{track.tourReportLink}&NoCloserButton=1"><span class="ficon ficon__arrow-right"></span>{f:translate(key: 'track.tourJournal')}</a><br />
+                </f:if>
+                <f:if condition="{track.downloadGpxLink}">
+                    <a class="link--ficon fancybox-iframe" href="{track.downloadGpxLink}&NoCloserButton=1"><span class="ficon ficon__arrow-right"></span>{f:translate(key: 'track.gpsData')}</a><br />
+                </f:if>
+                <f:if condition="{track.downloadKmlLink}">
+                    <a class="link--ficon fancybox-iframe" href="{track.downloadKmlLink}&NoCloserButton=1"><span class="ficon ficon__arrow-right"></span>Google Earth</a>
+                </f:if>
+            </div>
+        </div>
+    </f:if>
+    <f:if condition="{track.seeAlso}">
+        <div class="content-block sidebar__content-block">
+            <h2>{f:translate(key: 'track.contact')}</h2>
+            <div class="box--bg">
+                <p>{track.seeAlso -> f:format.nl2br()}</p>
+            </div>
+        </div>
+    </f:if>
+</f:section>

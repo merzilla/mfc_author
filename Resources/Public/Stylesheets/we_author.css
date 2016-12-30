@@ -1,0 +1,60 @@
+/* basic styles for extemson we_author */
+.we_author_box {
+	border: 1px solid #ccc;
+	padding: 15px;
+}
+
+.we_author_box .author_image {
+	float: left;
+	margin: 10px 20px 10px 10px;
+	width: 80px;
+}
+
+.we_author_box .author_image img {
+	margin: auto;
+	max-width: 80px;
+	max-height: 80px;
+}
+
+.we_author_box .author_description p {
+	margin-bottom: 2px;
+}
+
+.we_author_box .author_description p.author_name {
+	margin-top: 5px;
+}
+
+.we_author_box .author_description .author_social_profiles .author_profile_list {
+	list-style: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.we_author_box .author_description .author_social_profiles .author_profile_list .author_profile {
+	display: inline;
+	padding-right: 15px;
+}
+
+.we_author_box {
+	zoom: 1;
+}
+
+.we_author_box:before, .we_author_box:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	overflow: hidden;
+}
+
+.we_author_box:after {
+	clear: both;
+}
+
+.we_author_box {
+	margin-bottom: 10px;
+}
+
+#social_links div.we_author_box {
+	padding-bottom: 0 !important;
+}

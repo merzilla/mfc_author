@@ -2,34 +2,34 @@
 <T3locallang>
 	<meta type="array">
 		<type>database</type>
-		<description>Language labels for modul labels belonging to extension 'mfc_author'</description>
+		<description>Language labels for modul labels belonging to extension 'we_author'</description>
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="tx_mfcauthor_author">Author</label>
-			<label index="pages.tx_mfcauthor_author">Author</label>
-			<label index="pages.tx_mfcauthor_firstname">Firstname</label>
-			<label index="pages.tx_mfcauthor_name">Name</label>
-			<label index="pages.tx_mfcauthor_email">Email</label>
-			<label index="pages.tx_mfcauthor_profil_link">Link to GooglePlus Profile</label>
-			<label index="pages.tx_mfcauthor_image">Author Image</label>
-			<label index="pages.tx_mfcauthor_description">Author Description</label>
-			<label index="pages.tx_mfcauthor_facebook">Author Facebook page</label>
-			<label index="pages.tx_mfcauthor_twitter">Author Twitter URL</label>
-			<label index="pages.tx_mfcauthor_xing">add your XING profile url</label>
+			<label index="tx_weauthor_author">Author</label>
+			<label index="pages.tx_weauthor_author">Author</label>
+			<label index="pages.tx_weauthor_firstname">Firstname</label>
+			<label index="pages.tx_weauthor_name">Name</label>
+			<label index="pages.tx_weauthor_email">Email</label>
+			<label index="pages.tx_weauthor_profil_link">Link to GooglePlus Profile</label>
+			<label index="pages.tx_weauthor_image">Author Image</label>
+			<label index="pages.tx_weauthor_description">Author Description</label>
+			<label index="pages.tx_weauthor_facebook">Author Facebook page</label>
+			<label index="pages.tx_weauthor_twitter">Author Twitter URL</label>
+			<label index="pages.tx_weauthor_xing">add your XING profile url</label>
 		</languageKey>
 		<languageKey index="de" type="array">
-			<label index="tx_mfcauthor_author">Autor</label>
-			<label index="pages.tx_mfcauthor_author">Autor</label>
-			<label index="pages.tx_mfcauthor_firstname">Vorname</label>
-			<label index="pages.tx_mfcauthor_name">Name</label>
-			<label index="pages.tx_mfcauthor_email">Email</label>
-			<label index="pages.tx_mfcauthor_profil_link">Link zum G+ Profil</label>
-			<label index="pages.tx_mfcauthor_facebook">Link zur Facebook Seite</label>
-			<label index="pages.tx_mfcauthor_twitter">Link zur eigenen Twitter Seite</label>
-			<label index="pages.tx_mfcauthor_image">Autorenbild</label>
-			<label index="pages.tx_mfcauthor_description">Kurzbeschreibung des Autors</label>
-			<label index="pages.tx_mfcauthor_xing">XING Profile-Seite</label>
+			<label index="tx_weauthor_author">Autor</label>
+			<label index="pages.tx_weauthor_author">Autor</label>
+			<label index="pages.tx_weauthor_firstname">Vorname</label>
+			<label index="pages.tx_weauthor_name">Name</label>
+			<label index="pages.tx_weauthor_email">Email</label>
+			<label index="pages.tx_weauthor_profil_link">Link zum G+ Profil</label>
+			<label index="pages.tx_weauthor_facebook">Link zur Facebook Seite</label>
+			<label index="pages.tx_weauthor_twitter">Link zur eigenen Twitter Seite</label>
+			<label index="pages.tx_weauthor_image">Autorenbild</label>
+			<label index="pages.tx_weauthor_description">Kurzbeschreibung des Autors</label>
+			<label index="pages.tx_weauthor_xing">XING Profile-Seite</label>
 		</languageKey>
 	</data>
 </T3locallang>

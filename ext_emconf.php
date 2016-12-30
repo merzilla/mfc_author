@@ -2,11 +2,11 @@
 /** @var string $_EXTKEY */
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Author',
+    'title' => 'WE Author',
     'description' => 'Gives you the possibility to add author informations into every page or tx_news entry',
-    'category' => 'Marketing Factory',
+    'category' => 'Web Essentials',
     'shy' => 0,
-    'version' => '2.1.0',
+    'version' => '1.0.0',
     'dependencies' => '',
     'conflicts' => '',
     'priority' => '',
@@ -18,15 +18,16 @@ $EM_CONF[$_EXTKEY] = [
     'modify_tables' => 'pages,tx_news_domain_model_news',
     'clearcacheonload' => 1,
     'lockType' => '',
-    'author' => 'Simon Schmidt',
-    'author_email' => 'typo3@marketing-factory.de',
-    'author_company' => 'Marketing Factory Consulting GmbH',
+    'author' => 'Lauri Saarni',
+    'author_email' => 'lauri@web-essentials.asia',
+    'author_company' => 'Web Essentials',
     'CGLcompliance' => '',
     'CGLcompliance_note' => '',
     'constraints' => [
         'depends' => [
             'php' => '5.5.0-7.1.99',
             'typo3' => '6.2.0-7.6.99',
+	        'autoloader' => '2.1.3'
         ],
         'conflicts' => [
         ],

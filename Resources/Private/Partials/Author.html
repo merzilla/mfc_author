@@ -1,0 +1,38 @@
+{namespace fp=HDNET\Focuspoint\ViewHelpers}
+<div class="author">
+	<f:if condition="{author.fullName}">
+		<div class="name">
+			<strong>{f:translate(key: 'author.by')}</strong>
+			<span>{author.fullName}</span>
+		</div>
+	</f:if>
+	<f:if condition="{author.facebook}">
+		<div class="facebook">
+			<a href="{author.facebook}">Facebook</a>
+		</div>
+	</f:if>
+	<f:if condition="{author.twitter}">
+		<div class="twitter">
+			<a href="{author.twitter}">Twitter</a>
+		</div>
+	</f:if>
+	<f:if condition="{author.weAuthorImage}">
+		<f:for each="{author.weAuthorImage}" as="image">
+			<div>
+				<picture>
+					<source media="(max-width: 25em)"
+					        srcset="{fp:uri.image(width: '290c', height: '360c', treatIdAsReference: 1, src: image.uid)}">
+
+					<source media="(max-width: 990px)"
+					        srcset="{fp:uri.image(width: '540c', height: '200c', treatIdAsReference: 1, src: image.uid)}">
+
+					<source media="(max-width: 2000px)"
+					        srcset="{fp:uri.image(width: '400c', height: '420c', treatIdAsReference: 1, src: image.uid)}">
+
+					<img src="{fp:uri.image(width: '100c', height: '100c', treatIdAsReference: 1, src: image.uid)}"
+					     alt="The iPhone Safari web browser showing the RICG website.">
+				</picture>
+			</div>
+		</f:for>
+	</f:if>
+</div>
