@@ -1,0 +1,43 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:jrt="http://typo3.org/ns/JRT/Userjrtsite/ViewHelpers">
+
+    <f:layout name="Product" />
+
+    <section class="main__content" id="main-content" tabindex="-1">
+        <f:render section="MainContent" arguments="{_all}" />
+    </section>
+    <aside class="main__sidebar main__sidebar-right">
+        <f:alias map="{images: '{jrt:rootPageMedia()}'}">
+            <f:if condition="{images -> f:count()} > 0">
+                <div class="sidebar__logo">
+                    <f:for each="{images}" as="image" iteration="iteration">
+                        <f:if condition="{iteration.isFirst}">
+                            <v:link.typolink configuration="{parameter: settings.rootPage}">
+                                <f:image src="{image.uid}" treatIdAsReference="1" width="279c" />
+                            </v:link.typolink>
+                        </f:if>
+                    </f:for>
+                </div>
+            </f:if>
+        </f:alias>
+
+        <f:if condition="{v:content.get(column: 1)}">
+            <f:then>
+                <div class="content-block sidebar__content-block">
+                    <div class="box--bg">
+                        <v:content.render column="1" />
+                    </div>
+                </div>
+            </f:then>
+        </f:if>
+
+        <f:render section="SidebarContent" arguments="{_all}" />
+
+        <div class="content-block sidebar__content-block">
+            <f:render partial="shareMenu" arguments="{_all}" />
+        </div>
+    </aside>
+</div>

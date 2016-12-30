@@ -4,20 +4,20 @@ defined('TYPO3_MODE') or die('Access denied.');
 call_user_func(function () {
 
     if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('news')) {
-        $extkey = 'mfc_author';
+        $extkey = 'we_author';
         $ll = 'LLL:EXT:' . $extkey . '/Resources/Private/Language/locallang_tca.xml:';
 
         $columns = [
-            'tx_mfcauthor_author' => [
+            'tx_weauthor_domain_model_author' => [
                 'exclude' => 0,
-                'label' => $ll . 'pages.tx_mfcauthor_author',
+                'label' => $ll . 'pages.tx_weauthor_author',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
                         ['', 0],
                     ],
-                    'foreign_table' => 'tx_mfcauthor_author',
+                    'foreign_table' => 'tx_weauthor_author',
                     'size' => 1,
                     'minitems' => 0,
                     'maxitems' => 1,
@@ -34,7 +34,7 @@ call_user_func(function () {
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
             'tx_news_domain_model_news',
             'paletteAuthor',
-            '--linebreak--, tx_mfcauthor_author',
+            '--linebreak--, tx_weauthor_author',
             'after:author_email'
         );
     }

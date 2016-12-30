@@ -3,19 +3,19 @@ defined('TYPO3_MODE') or die('Access denied.');
 
 return call_user_func(function () {
 
-    $extkey = 'mfc_author';
+    $extkey = 'we_author';
     $ll = 'LLL:EXT:' . $extkey . '/Resources/Private/Language/locallang_tca.xml:';
 
     return [
         'ctrl' => [
-            'title' => $ll . 'tx_mfcauthor_author',
+            'title' => $ll . 'tx_weauthor_author',
             'label' => 'name',
             'label_alt' => 'firstname',
             'label_alt_force' => 1,
             'crdate' => 'crdate',
             'tstamp' => 'tstamp',
             'default_sortby' => 'ORDER BY name',
-            'iconfile' => 'EXT:mfc_author/Resources/Public/Icon/fe_users.gif',
+            'iconfile' => 'EXT:we_author/Resources/Public/Icon/fe_users.gif',
             'searchFields' => 'uid,firstname,name,description,email,profil_link,xing,facebook,twitter',
         ],
         'interface' => [
@@ -24,7 +24,7 @@ return call_user_func(function () {
         'columns' => [
             'firstname' => [
                 'exclude' => 1,
-                'label' => $ll . 'pages.tx_mfcauthor_firstname',
+                'label' => $ll . 'pages.tx_weauthor_firstname',
                 'config' => [
                     'type' => 'input',
                     'size' => '30',
@@ -33,7 +33,7 @@ return call_user_func(function () {
             ],
             'name' => [
                 'exclude' => 1,
-                'label' => $ll . 'pages.tx_mfcauthor_name',
+                'label' => $ll . 'pages.tx_weauthor_name',
                 'config' => [
                     'type' => 'input',
                     'size' => '30',
@@ -42,7 +42,7 @@ return call_user_func(function () {
             ],
             'email' => [
                 'exclude' => 1,
-                'label' => $ll . 'pages.tx_mfcauthor_email',
+                'label' => $ll . 'pages.tx_weauthor_email',
                 'config' => [
                     'type' => 'input',
                     'size' => '50',
@@ -51,7 +51,7 @@ return call_user_func(function () {
             ],
             'profil_link' => [
                 'exclude' => 1,
-                'label' => $ll . 'pages.tx_mfcauthor_profil_link',
+                'label' => $ll . 'pages.tx_weauthor_profil_link',
                 'config' => [
                     'type' => 'input',
                     'size' => '75',
@@ -59,14 +59,14 @@ return call_user_func(function () {
                 ],
             ],
 
-            'mfc_author_image' => [
+            'we_author_image' => [
                 'exclude' => 0,
-                'label' => $ll . 'pages.tx_mfcauthor_image',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('mfc_author_image'),
+                'label' => $ll . 'pages.tx_weauthor_image',
+                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('we_author_image'),
             ],
             'description' => [
                 'exclude' => 1,
-                'label' => $ll . 'pages.tx_mfcauthor_description',
+                'label' => $ll . 'pages.tx_weauthor_description',
                 'config' => [
                     'type' => 'text',
                     'size' => '200',
@@ -75,7 +75,7 @@ return call_user_func(function () {
             ],
             'xing' => [
                 'exclude' => 1,
-                'label' => $ll . 'pages.tx_mfcauthor_xing',
+                'label' => $ll . 'pages.tx_weauthor_xing',
                 'config' => [
                     'type' => 'input',
                     'size' => '75',
@@ -84,7 +84,7 @@ return call_user_func(function () {
             ],
             'facebook' => [
                 'exclude' => 1,
-                'label' => $ll . 'pages.tx_mfcauthor_facebook',
+                'label' => $ll . 'pages.tx_weauthor_facebook',
                 'config' => [
                     'type' => 'input',
                     'size' => '75',
@@ -93,7 +93,7 @@ return call_user_func(function () {
             ],
             'twitter' => [
                 'exclude' => 1,
-                'label' => $ll . 'pages.tx_mfcauthor_twitter',
+                'label' => $ll . 'pages.tx_weauthor_twitter',
                 'config' => [
                     'type' => 'input',
                     'size' => '75',
@@ -102,7 +102,7 @@ return call_user_func(function () {
             ],
         ],
         'types' => [
-            '0' => ['showitem' => 'hidden,--palette--;;1,firstname,name,mfc_author_image,description,email,profil_link,xing,facebook,twitter'],
+            '0' => ['showitem' => 'hidden,--palette--;;1,firstname,name,we_author_image,description,email,profil_link,xing,facebook,twitter'],
         ],
         'palettes' => [
             '1' => ['showitem' => ''],

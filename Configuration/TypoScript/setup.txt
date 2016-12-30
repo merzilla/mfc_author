@@ -1,13 +1,13 @@
 lib.author = CONTENT
 lib.author {
-	table = tx_mfcauthor_author
+	table = tx_weauthor_domain_model_author
 
 	select {
-		pidInList = {$plugin.mfc_author.author_folder}
+		pidInList = {$plugin.we_author.author_folder}
 
 
 		andWhere.cObject = TEXT
-		andWhere.cObject.field = tx_mfcauthor_author
+		andWhere.cObject.field = tx_weauthor_domain_model_author
 		andWhere.cObject.ifEmpty = 0
 		andWhere.cObject.wrap = uid=|
 	}
@@ -20,17 +20,17 @@ lib.author {
 lib.authorbottom < lib.author
 lib.authorbottom.renderObj = COA
 lib.authorbottom.renderObj {
-	wrap = <div class="mfc_author_box">|</div>
+	wrap = <div class="we_author_box">|</div>
 	10 < tt_content.image.20
 	10 {
 		stdWrap.wrap = <div class="author_image">|</div>
 		imgList.cObject.references {
-			table = tx_mfcauthor_author
-			fieldName = mfc_author_image
+			table = tx_weauthor_domain_model_author
+			fieldName = we_author_image
 		}
 		1.file {
-			maxW = {$plugin.mfc_author.author_image.maxW}
-			maxH = {$plugin.mfc_author.author_image.maxH}
+			maxW = {$plugin.we_author.author_image.maxW}
+			maxH = {$plugin.we_author.author_image.maxH}
 		}
 	}
 
@@ -94,12 +94,12 @@ lib.author {
 
 	conf.tx_news_domain_model_news = CONTENT
 	conf.tx_news_domain_model_news {
-		table = tx_mfcauthor_author
+		table = tx_weauthor_domain_model_author
 
 		select {
-			pidInList = {$plugin.mfc_author.author_folder}
+			pidInList = {$plugin.we_author.author_folder}
 			andWhere.cObject = TEXT
-			andWhere.cObject.field = tx_mfcauthor_author
+			andWhere.cObject.field = tx_weauthor_domain_model_author
 			andWhere.cObject.ifEmpty = 0
 			andWhere.cObject.wrap = uid=|
 		}
@@ -112,17 +112,17 @@ lib.author {
 lib.authorbottom < lib.author
 lib.authorbottom.conf.tx_news_domain_model_news.renderObj = COA
 lib.authorbottom.conf.tx_news_domain_model_news.renderObj {
-	wrap = <div class="mfc_author_box">|</div>
+	wrap = <div class="we_author_box">|</div>
 	10 < tt_content.image.20
 	10 {
 		stdWrap.wrap = <div class="author_image">|</div>
 		imgList.cObject.references {
-			table = tx_mfcauthor_author
-			fieldName = mfc_author_image
+			table = tx_weauthor_domain_model_author
+			fieldName = we_author_image
 		}
 		1.file {
-			maxW = {$plugin.mfc_author.author_image.maxW}
-			maxH = {$plugin.mfc_author.author_image.maxH}
+			maxW = {$plugin.we_author.author_image.maxW}
+			maxH = {$plugin.we_author.author_image.maxH}
 		}
 	}
 	20 = COA
@@ -175,8 +175,8 @@ lib.authorbottom.conf.tx_news_domain_model_news.renderObj {
 
 page.meta.author >
 
-[globalVar = LIT:{$plugin.mfc_author.useDefaultCSS} = 1]
-page.includeCSS.mfc_author = {$plugin.mfc_author.defaultCSSFile}
+[globalVar = LIT:{$plugin.we_author.useDefaultCSS} = 1]
+page.includeCSS.we_author = {$plugin.we_author.defaultCSSFile}
 [end]
 
-{$plugin.mfc_author.insertObjectPosition} < lib.authorbottom
+{$plugin.we_author.insertObjectPosition} < lib.authorbottom

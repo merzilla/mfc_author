@@ -1,9 +1,9 @@
-plugin.mfc_author {
-	author_folder =
+plugin.we_author {
+	author_folder = 112
 	author_image.maxW = 80
 	author_image.maxH = 80
 	useDefaultCSS = 0
-	defaultCSSFile = EXT:mfc_author/Resources/Public/Stylesheets/mfc_author.css
+	defaultCSSFile = EXT:we_author/Resources/Public/Stylesheets/we_author.css
 	insertObjectPosition = lib.contentMain.75
 }
 
